@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Exemplo de Formulário </title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>
+            <form action="mostrarDados.php" method="GET">
+                <label>Nome:</label>
+                <input type="text" name="nome"/> <br/>
+                <label>Sexo:</label>
+                <select name="sexo">
+                    <option value="masculino">Masculino</option>
+                    <option value="feminino">Feminino</option>
+                </select><br>
+                <label>Peso:</label>
+                <input type="text" name="peso"/> <br/>
+                <label>Altura:</label>
+                <input type="text" name="altura"/> <br/>
+                <input type="submit" value="Calcular IMC"/> <br/>
+            </form>    
+        </div>
+    </body>
+</html>
