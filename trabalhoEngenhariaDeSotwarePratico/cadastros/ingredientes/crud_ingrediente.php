@@ -81,7 +81,7 @@
 		$action = "crud_ingrediente.php?acao=atualizar&id=".$_GET['id']; 
     
     
-		require './alterarIngrediente.php';
+		require './form_ingrediente.php';
 	}
 	else if($acao == "atualizar"){
 		

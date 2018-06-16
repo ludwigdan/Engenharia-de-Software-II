@@ -12,7 +12,10 @@
   <script>
 		$(document).ready(function(){
 			
+			<?php  if (!isset($itens)) { ?>
 			$('input[name=lucro]').val(0);
+			
+			<?php } ?>
 			
 			$(document).on('click', '#addIngrediente', function(){
 				$('<br>').appendTo('#listaIngredientes');

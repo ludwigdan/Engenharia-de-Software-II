@@ -73,23 +73,55 @@
 				<form name="crudIngrediente" action="<?php echo $action;?>" method="POST">
 					<div>
 						<label>Descrição</label>
-						<input type="text" name="nome" value="<?php if (isset($ErroMessage)) echo $_POST['nome'] ?>" required/>
+						<input type="text" name="nome" value="<?php if (isset($ErroMessage)) echo $_POST['nome']; else if (isset($Ingrediente )) echo $Ingrediente['descricao']; ?>" required/>
 					</div>
 					<div>
 						<label>Unidade de Medida</label>
 						<select name="unidade">
-								<option value="Unidade" <?php if(isset($ErroMessage)){if($_POST['unidade'] == 'Unidade') echo "selected"; } ?> >Unidade</option>
-								<option value="ML" <?php if(isset($ErroMessage)){if($_POST['unidade'] == 'ML') echo "selected"; } ?>>ML</option>
-								<option value="MG" <?php if(isset($ErroMessage)){if($_POST['unidade'] == 'MG') echo "selected"; } ?>>MG</option>
+								<option value="Unidade" 
+								<?php 
+									if(isset($ErroMessage)){
+										if($_POST['unidade'] == 'Unidade') 
+											echo "selected"; 
+									} else if(isset($Ingrediente)) { 
+										if ($Ingrediente['unidade'] = 'Unidade'){ 
+											echo "Selected";
+										}
+									}
+								?> >Unidade</option>
+
+								<option value="ML" 
+								<?php 
+									if(isset($ErroMessage)){
+										if($_POST['unidade'] == 'ML') 
+											echo "selected"; 
+									} else if(isset($Ingrediente)) { 
+										if($Ingrediente['unidade'] = 'ML'){ 
+											echo "Selected";
+										}
+									}
+								?> >ML</option>
+
+								<option value="MG" 
+								<?php 
+									if(isset($ErroMessage)){
+										if($_POST['unidade'] == 'MG') 
+											echo "selected"; 
+									} else if(isset($Ingrediente)) { 
+										if($Ingrediente['unidade'] = 'MG'){ 
+											echo "Selected";
+										}
+									}
+								?> >MG</option>									
 							</select>
 					</div>
 						<div>
 						<label>Porção</label>
-						<input type="number" name="porcao" value="<?php if (isset($ErroMessage)) echo $_POST['porcao'] ?>" required/>
+						<input type="number" name="porcao" value="<?php if (isset($ErroMessage)) echo $_POST['porcao']; else if (isset($Ingrediente )) echo $Ingrediente['porcao']; ?>" required/>
 					</div>
 						<div>
 						<label>Preço</label>
-						<input type="text" name="preco" id="preco" onChange="validaPreco();" value="<?php if (isset($ErroMessage)) echo $_POST['preco'] ?>" required/>
+						<input type="text" name="preco" id="preco" onChange="validaPreco();" value="<?php if (isset($ErroMessage)) echo $_POST['preco']; else if (isset($Ingrediente )) echo $Ingrediente['preco']; ?>" required/>
 					</div>
 					<input type="submit" value="Enviar" />
 				</form>

@@ -112,12 +112,18 @@
 					$query  = $bd->prepare($insert);
 					$result = $query->execute();
 				}
+				
+				$update = "update itemcardapio set percentuallucro =  '".$_POST['lucro']."', precovendaindicado = '".$_POST['precovenda']."', descricao = '".$_POST['nome']."' where id = ".$_GET['id'];
+				$query  = $bd->prepare($update);
+				$result = $query->execute();
+    
+				if($result)         header('Location: crud_cardapio.php?acao=listar');
 						
 			}else{
 				echo $delete;
 			}
 			
-			 header('Location: crud_cardapio.php?acao=listar');
+			
    
 
 	}
