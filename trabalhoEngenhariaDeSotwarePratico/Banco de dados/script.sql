@@ -37,3 +37,5 @@ create table ingredienteItemCardapio(
 	idItem integer,
 	quantidade integer
 );
+
+
