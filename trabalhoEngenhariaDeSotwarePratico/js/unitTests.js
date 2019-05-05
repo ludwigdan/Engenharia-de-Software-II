@@ -1,4 +1,4 @@
-QUnit.test( "Primeiro teste com QUnit", function( assert ) {
+QUnit.test( "Teste preço venda", function( assert ) {
  $('input[name^=lucro]').val(100);
  $('input[name^=quantidadeIngrediente]').val(1);
  $('input[name^=precoItem]').val(10);

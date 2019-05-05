@@ -170,7 +170,7 @@
 				
 			});
 			
-			$(document).on('change', 'input[name^=lucro]', function(e){
+			$(document).on('change', 'input[name^=lucro]', function(e){ 
 				
 				var precoVenda = 0;
 				
