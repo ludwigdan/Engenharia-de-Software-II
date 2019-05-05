@@ -4,8 +4,8 @@
 //$usuario = "root";
 //$senha   = "root";
 
-$dsn = "pgsql:host=localhost;dbname=Tradi";
+$dsn = "pgsql:host=localhost;dbname=tradi";
 $usuario = "postgres";
-$senha   = "hejbp2";
+$senha   = "masterkey";
 
 $bd = new PDO($dsn, $usuario, $senha);

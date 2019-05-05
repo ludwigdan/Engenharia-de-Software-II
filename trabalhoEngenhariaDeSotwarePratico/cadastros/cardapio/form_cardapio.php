@@ -8,6 +8,8 @@
     <!-- Script de funcoes -->
 	<script type="text/javascript" src="../../js/jquery.js"></script>
     <script type="text/javascript" src="../../js/funcoes.js"></script>
+	<!-- Qunit -->
+	<link rel="stylesheet" href="http://code.jquery.com/qunit/qunit-1.19.0.css">
   </head>
   <script>
 		$(document).ready(function(){
@@ -170,7 +172,6 @@
 			
 			$(document).on('change', 'input[name^=lucro]', function(e){
 				
-				
 				var precoVenda = 0;
 				
 				$.each($('input[name^=precoItem]'), function(index){
@@ -211,6 +212,12 @@
   
   </script>
   <body>
+  
+    <div id="qunit"></div>
+  <div id="qunit-fixture"></div>
+  <script src="https://code.jquery.com/qunit/qunit-2.9.2.js"></script>
+  <script src="../../js/unitTests.js"></script>
+  
 	<div class="row">
 		<header>
 			<div class="header-col-12" id="linhaPreta"> </div>
@@ -250,7 +257,7 @@
 						</div>
 						<div>
 							<label>Percentual de Lucro desejado</label>
-							<input type="text" name="lucro" value="<?php if (isset($itens)) echo $itens['percentuallucro'] ?>" required/>
+							<input type="text" name="lucro" id="lucro" value="<?php if (isset($itens)) echo $itens['percentuallucro'] ?>" required/>
 						</div>
 							<div>
 							<label>Preço de venda</label>
